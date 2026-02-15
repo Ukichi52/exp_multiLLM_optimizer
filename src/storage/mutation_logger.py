@@ -16,9 +16,13 @@ class MutationLogger:
         query: str,
         response: str,
         score: float,
-        strategy: str
+        strategy: str,
+        previous_score: float = None,
+        score_improvement: float = None,
+        gap_to_threshold: float = None,
+        failure_analysis: str = None
     ):
-        """Log a single mutation"""
+        """Log a single mutation with score metrics"""
         mutation_file = self.mutations_dir / f"{image_id}_mutations.jsonl"
         
         entry = {
@@ -28,6 +32,18 @@ class MutationLogger:
             "score": score,
             "strategy": strategy
         }
+        
+        # Add score metrics if available
+        if previous_score is not None:
+            entry["previous_score"] = previous_score
+        if score_improvement is not None:
+            entry["score_improvement"] = score_improvement
+        if gap_to_threshold is not None:
+            entry["gap_to_threshold"] = gap_to_threshold
+        
+        # Add failure analysis if available
+        if failure_analysis is not None:
+            entry["failure_analysis"] = failure_analysis
         
         with open(mutation_file, 'a', encoding='utf-8') as f:
             f.write(json.dumps(entry, ensure_ascii=False) + '\n')
