@@ -47,7 +47,9 @@ class CLIPRetriever:
         inputs = {k: v.to(self.device) for k, v in inputs.items()}
         
         with torch.no_grad():
-            features = self.model.get_image_features(**inputs)
+            outputs = self.model.get_image_features(**inputs)
+            features = outputs.pooler_output
+            
             features = features / features.norm(dim=-1, keepdim=True)
         
         return features.cpu().numpy()[0]
