@@ -18,6 +18,9 @@ class TargetModel(BaseModel):
         """
         image_base64 = self._encode_image(image_path)
         
+        prefix = "Describe the image content. "
+        full_text = f"{prefix}{query}"
+        
         messages = [
             {
                 'role': 'user',
@@ -30,7 +33,7 @@ class TargetModel(BaseModel):
                     },
                     {
                         'type': 'text',
-                        'text': query
+                        'text': full_text
                     }
                 ]
             }
