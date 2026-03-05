@@ -1,0 +1,30 @@
+# 忽略 Python 缓存和本地环境配置
+__pycache__/
+*.py[cod]
+.env
+venv/
+miniconda3/
+
+local_llm/
+history/
+trajectories_history/
+cluster_base/
+trajectories/
+tests/
+outputs/
+# 忽略数据集、模型权重和检查点 (避免仓库变得极其臃肿)
+datasets/
+data/
+*.pth
+*.pt
+*.ckpt
+weights/
+
+# 忽略运行日志和结果输出
+logs/
+*.log
+outputs/
+
+# 忽略 VS Code 等编辑器的本地配置
+.vscode/
+.idea/
