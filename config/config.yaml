@@ -7,8 +7,11 @@ models:
     type: "api"
     provider: "claude"
     api_base: "https://ai-yyds.com/v1"
-    api_key: "sk-ClD39TmXo3dQnZL71574Fb42CfBf45FcA6F3Bb7530EfDfA8"  # 替换成你的实际 key
-    model_name: "claude-3-7-sonnet-20250219"
+    api_key: "sk-apikey"  # 替换成你的实际 key
+    # model_name: "claude-3-7-sonnet-20250219"
+    # model_name: "claude-sonnet-4-20250514"
+    # model_name: "gpt-4o"
+    model_name: "gemini-2.5-flash"
     rate_limit: 1.0  # requests per second
     generation_config:
       max_tokens: 2048
@@ -19,7 +22,7 @@ models:
     type: "api"
     provider: "deepseek"
     api_base: "https://api.deepseek.com/v1"
-    api_key: "sk-a078ae1e0c08435eae854102cf01644a"
+    api_key: "sk-apikey"
     model_name: "deepseek-reasoner"
     rate_limit: 3.0
     generation_config:
@@ -31,7 +34,7 @@ models:
     type: "api"
     provider: "gemini"
     api_base: "https://ai-yyds.com/v1"
-    api_key: "sk-ClD39TmXo3dQnZL71574Fb42CfBf45FcA6F3Bb7530EfDfA8"
+    api_key: "sk-apikey"
     model_name: "gemini-2.5-pro-preview"
     rate_limit: 1.0
     generation_config:
@@ -43,7 +46,7 @@ models:
     type: "api"
     provider: "chatgpt"
     api_base: "https://ai-yyds.com/v1"
-    api_key: "sk-ClD39TmXo3dQnZL71574Fb42CfBf45FcA6F3Bb7530EfDfA8"
+    api_key: "sk-apikey"
     model_name: "gpt-4o-mini"
     rate_limit: 0.5
     generation_config:
